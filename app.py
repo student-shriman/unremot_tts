@@ -1,8 +1,12 @@
 # Getting Accelerator  ..
 try:
-  import os
+  import os, shutil
   import torch
   import soundfile as sf
+  from googletrans import Translator
+  
+  from responsive_voice import ResponsiveVoice
+  from responsive_voice.voices import HindiFemale, HindiMale
   print('Basic modules has been imported')
   
 except:
@@ -67,10 +71,22 @@ def get_speech(text):
   except:
         print('There are some problems with TTS ..')
 
+# Hindi TTS
+def get_hindi_speech(text):
+  engine = HindiFemale()
+  file_path = engine.get_mp3(text, rate=0.45)
+  filepath = shutil.move(file_path, os.getcswd())
+  print('Congratts Your inputted Text has been processed ..')
+  print ('Text-to-Speech Synthesis has been done and output file has been saved successfully ..')
+  print('Please check "speech.mp3" file.')
+
 input_mode = input(' Please choose an option - "sample text, custom text, file" ')
 if input_mode=="sample text" or "custom text" or "file":
   text = get_input(input_mode)
-  get_speech(text)
-  
+  translator = Translator()
+  if translator.detect(text).lang=='en':
+    get_speech(text)
+  elif translator.detect(text).lang=='hi':
+    get_hindi_speech(text)
 else:
   print('There is something wrong with your selection. Please choose a correct option')
