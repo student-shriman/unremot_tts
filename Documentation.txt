@@ -1,0 +1,14 @@
+
+                            ################    ##################  Text-to-Speech Synthesis  #################    #############
+
+ =>  This is a Text-to-Speech Synthesis System, which will generate Speech output for us. It will take Text as input and will generate Speech output for that Text.
+ =>  This comprises 2 kinds of model, One is Text-to-Spectrogram generator and other one is a vocoder which will process that generated spectogram and generates the Synthetic speech output.
+ =>  This TTS system will save the generated speech as a physical file for further use.
+ 
+ =>  There is a requirements.txt file, we will use this file for setting up the environment and installing dependencies.
+ =>  Please use Python 3.8.10 for creating the environmemnt and a latest PyTorch "torch==1.13.1" version.
+ =>  The entrypoint for this TTS code is "app.py". It will start on localhost and will take text as input then generate a speech output and save it to a file.
+ =>  There is one ipynb file, which have the same code in notebooks format.
+ =>  This code will load the pretrained model during runtime.
+ 
+      
