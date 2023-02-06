@@ -11,4 +11,4 @@
  =>  There is one ipynb file, which have the same code in notebooks format.
  =>  This code will load the pretrained model during runtime.
  
-      
+ =>  We are using Nvidia's Fastpich pre-trained model - https://arxiv.org/pdf/2006.06873.pdf
